@@ -13,7 +13,7 @@ import Loading from './Loading';
 // import config from '../config.json';
 
 function App() {
-  const [account, setAccount] = useState(null)
+  const [account, setAccount] = useState("")
   const [balance, setBalance] = useState(0)
 
   const [isLoading, setIsLoading] = useState(true)
@@ -26,13 +26,13 @@ function App() {
     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
     const account = ethers.utils.getAddress(accounts[0])
     setAccount(account)
-
+    console.log(account)
     // Fetch account balance
-    let balance = await provider.getBalance(account)
+  /*   let balance = await provider.getBalance(account)
     balance = ethers.utils.formatUnits(balance, 18)
     setBalance(balance)
-
-    setIsLoading(false)
+    console.log(balance) */
+     setIsLoading(false)
   }
 
   useEffect(() => {
@@ -51,7 +51,7 @@ function App() {
         <Loading />
       ) : (
         <>
-          <p className='text-center'><strong>Your ETH Balance:</strong> {balance} ETH</p>
+        {/*   <p className='text-center'><strong>Your ETH Balance:</strong> {balance} ETH</p> */}
           <p className='text-center'>Edit App.js to add your code here.</p>
         </>
       )}
