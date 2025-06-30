@@ -28,11 +28,11 @@ function App() {
     setAccount(account)
     console.log(account)
     // Fetch account balance
-  /*   let balance = await provider.getBalance(account)
+    let balance = await provider.getBalance(account)
     balance = ethers.utils.formatUnits(balance, 18)
     setBalance(balance)
-    console.log(balance) */
-     setIsLoading(false)
+    console.log(balance)
+    setIsLoading(false)
   }
 
   useEffect(() => {
@@ -51,7 +51,7 @@ function App() {
         <Loading />
       ) : (
         <>
-        {/*   <p className='text-center'><strong>Your ETH Balance:</strong> {balance} ETH</p> */}
+          <p className='text-center'><strong>Your ETH Balance:</strong> {balance} ETH</p>
           <p className='text-center'>Edit App.js to add your code here.</p>
         </>
       )}
